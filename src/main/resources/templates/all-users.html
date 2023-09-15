@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<table>
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Surname</th>
+    <th>Department</th>
+    <th>Salary</th>
+    <th colspan="2">Operations</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="user : ${allUsers}">
+    <hidden th:field="*{user.id}"/>
+    <td th:text="${user.name}"></td>
+    <td th:text="${user.surname}"></td>
+    <td th:text="${user.department}"></td>
+    <td th:text="${user.salary}"></td>
+    <td>
+      <form th:action="@{/updateUser={id}(id=${user.getId()})}" th:object="${user}" method="get">
+        <input type="submit" value="Update"/></form>
+    </td>
+    <td> <form th:action="@{/deleteUser={id}(id=${user.getId()})}" th:object="${user}" method="get">
+      <input type="submit" value="Delete"/></form>
+    </td>
+</table>
+<br>
+<input type="button" value="Add"
+       onclick="window.location.href = 'addNewUser'"/>
+</body>
+</html>
