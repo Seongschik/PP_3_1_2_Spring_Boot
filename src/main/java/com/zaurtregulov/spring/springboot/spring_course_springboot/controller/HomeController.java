@@ -15,7 +15,7 @@ public class HomeController {
     @Autowired
     private UserService userService;
 
-    @RequestMapping("/1234")
+    @RequestMapping("/")
     public String getAllUsers(Model model) {
         List<User> allUsers = userService.getAllUsers();
         model.addAttribute("allUsers", allUsers);

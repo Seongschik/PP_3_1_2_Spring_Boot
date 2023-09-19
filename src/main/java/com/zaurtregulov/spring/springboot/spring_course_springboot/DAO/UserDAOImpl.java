@@ -3,13 +3,13 @@ package com.zaurtregulov.spring.springboot.spring_course_springboot.DAO;
 
 
 import com.zaurtregulov.spring.springboot.spring_course_springboot.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.persistence.Query;
 import org.springframework.stereotype.Repository;
 
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+
 import java.util.List;
 
 
